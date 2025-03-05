@@ -52,7 +52,7 @@ class SpriteBuffer(
             GL_ARRAY_BUFFER,
             0,
             capacity * SpriteProgram.STRIDE_SIZE,
-            GL_MAP_WRITE_BIT or GL_MAP_INVALIDATE_RANGE_BIT or GL_MAP_FLUSH_EXPLICIT_BIT
+            GL_MAP_WRITE_BIT or GL_MAP_INVALIDATE_BUFFER_BIT or GL_MAP_FLUSH_EXPLICIT_BIT
         )?.let {
             bufferData = (it as ByteBuffer).order(ByteOrder.nativeOrder())
         }
