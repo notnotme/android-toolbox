@@ -56,6 +56,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_notnotme_openmpt_OpenMPT_decode(JNIEn
 
     const auto size = static_cast<jsize>(frame_reads * 2);
     env->SetFloatArrayRegion(buffer, 0, size, data_ptr);
+    env->ReleaseFloatArrayElements(buffer, data_ptr, JNI_ABORT);
 }
 
 extern "C" JNIEXPORT jint JNICALL Java_com_notnotme_openmpt_OpenMPT_getPattern(JNIEnv * env, jobject obj) {
